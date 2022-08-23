@@ -3,7 +3,7 @@
 <div align="center">
   <h3>🎲 Tic Tac Toe</h3>
 
-  <a href="https://unicornchat-app.web.app/">View Demo</a>
+  <a href="https://tic-tac-toe-juste3sar.vercel.app/">View Demo</a>
 </div>
 
 <img align="center" width="100%" src="screenshot.png">
