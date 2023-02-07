@@ -1,6 +1,5 @@
 import { useState, useEffect, useCallback, useRef } from 'react';
-// import logo from './logo.svg';
-import './App.css';
+import logo from './logo.svg';
 
 import Square from './components/Square';
 import PlayButton from './components/PlayButton';
@@ -11,10 +10,10 @@ function App() {
   const [squares, setSquares] = useState(Array(9).fill(null))
   const [xIsNext, setIsNextX] = useState(true)
   const [player] = useState("X")
-  const [winnerData, setWinner] = useState()
-  const {winner, winnerSquares} = winnerData || {
-      winner: null,
-      winnerSquares: []
+  const [winnerData, setWinner] = useState(null)
+  const { winner, winnerSquares } = winnerData || {
+    winner: null,
+    winnerSquares: []
   };
 
   const buttonsContainerRef = useRef()
@@ -38,10 +37,10 @@ function App() {
   }
 
   useEffect(() => {
-    let winner = calculateWinner(squares)
+    let winningPlayer = calculateWinner(squares)
 
-    if (winner) {
-      setWinner(winner)
+    if (winningPlayer) {
+      setWinner(winningPlayer)
     }
 
     if (xIsNext) return;
@@ -49,13 +48,12 @@ function App() {
 
   return (
     <div className="container">
-      {/*<img src={logo} className="App-logo" style={{width: '100%'}} alt="logo" />*/}
 
       <p style={{ color: 'white' }}>Next Player: {xIsNext ? 'X' : 'O'}</p>
 
       <div className="grid" ref={buttonsContainerRef}>
         {squares.map((squareValue, idx) => (
-          <Square key={idx + '_button'} value={squareValue} isMe={squares[idx] === player} isWinner={winnerSquares.includes(idx)} onSquareClick={() => buttonClickHandler(idx)} />
+          <Square key={idx + '_button'} value={squareValue} isMe={squares[idx] === player} isWinner={winnerSquares.includes(idx)} onSquareClick={() => buttonClickHandler(idx)} disabled={undefined} />
         ))}
       </div>
 

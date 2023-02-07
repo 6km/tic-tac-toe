@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@200;300;400;500;600;700;800;900;1000&display=swap');
+
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
@@ -5,7 +7,7 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background:  linear-gradient(0deg, #5430c3, #5f37d9);
+  background: linear-gradient(0deg, #5430c3, #5f37d9);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -15,4 +17,64 @@ body {
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+
+
+.container {
+  width: 28em;
+  height: 28em;
+  user-select: none;
+  transform: scale(0.8);
+}
+
+
+.grid {
+  display: grid;
+  grid-template-columns: auto auto auto;
+  grid-gap: 1.1em;
+}
+
+.grid>div {
+  background: #352789;
+  box-shadow: 0 4px #1e164e;
+  border-radius: 24px;
+  max-height: 1.05em;
+  max-width: 1.05em;
+
+  height: 1.05em;
+  width: 1.05em;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 7.8em;
+  text-align: center;
+  font-weight: 900;
+  font-family: Nunito;
+
+  color: #694de2;
+
+  transition: 0.15s ease-out;
+  cursor: pointer;
+
+  overflow: hidden;
+}
+
+.grid>div:hover {
+  filter: brightness(1.1);
+}
+
+.grid>div:active {
+  filter: brighness(1.15);
+  transform: translateY(2px);
+}
+
+.grid>div.active {
+  background: #6137e2;
+  color: white;
+}
+
+
+.grid>div.winner {
+  background: #ff4086;
 }
