@@ -51,9 +51,9 @@ function App() {
 
       <p style={{ color: 'white' }}>Next Player: {xIsNext ? 'X' : 'O'}</p>
 
-      <div className="grid" ref={buttonsContainerRef}>
+      <div className={`grid ${winner || squares.filter(s => s !== null).length === 9 ? "game-over" : ""}`} ref={buttonsContainerRef}>
         {squares.map((squareValue, idx) => (
-          <Square key={idx + '_button'} value={squareValue} isMe={squares[idx] === player} isWinner={winnerSquares.includes(idx)} onSquareClick={() => buttonClickHandler(idx)} disabled={undefined} />
+          <Square key={idx + '_button'} value={squareValue} isMe={squares[idx] === player} isWinner={winnerSquares.includes(idx)} onSquareClick={() => buttonClickHandler(idx)} isGameOver={typeof winnerData === "object"} disabled={undefined} />
         ))}
       </div>
 

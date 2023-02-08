@@ -77,4 +77,9 @@ code {
 
 .grid>div.winner {
   background: #ff4086;
+  color: white;
+}
+
+.grid.game-over>div:not(.winner) {
+  opacity: 0.5 !important;
 }
