@@ -1,5 +1,4 @@
 import { useState, useEffect, useCallback, useRef } from 'react';
-import logo from './logo.svg';
 
 import Square from './components/Square';
 import PlayButton from './components/PlayButton';
