@@ -1,3 +1,10 @@
+:root {
+	--background-color: #141E46;
+	--text-color: white;
+	--border-color: rgba(255, 255, 255, 0.1);
+	--hover-color: #acb1c9;
+}
+
 html,
 body {
 	margin: 0;
@@ -6,15 +13,15 @@ body {
 		sans-serif;
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
-	background: #141E46;
-	color: white;
+	background: var(--background-color);
+	color: var(--text-color);
 	height: 100vh;
 	display: flex;
 	justify-content: center;
 }
 
 button {
-	color: whitesmoke;
+	color: var(--text-color);
 	font-family: Poppins;
 	font-size: 16px !important;
 	font-weight: 300;
@@ -54,7 +61,7 @@ a {
 			// transition: .1s ease-in-out;
 
 			&:hover {
-				color: #acb1c9;
+				color: var(--hover-color);
 				text-decoration: underline;
 				text-decoration-thickness: 2px;
 				text-decoration-skip-ink: none;
@@ -68,7 +75,8 @@ a {
 	grid-template-columns: repeat(3, 110.34px);
 	width: 333px;
 	aspect-ratio: 1/1;
-	border: 1px solid rgba(255, 255, 255, 0.1);
+	border: 1px solid var(--border-color);
+	/* Simplified */
 	border-radius: 12px;
 	overflow: hidden;
 	user-select: none;
@@ -83,7 +91,7 @@ a {
 		font-weight: 100;
 		font-family: Flamenco;
 		overflow: hidden;
-		color: whitesmoke;
+		color: var(--text-color);
 		cursor: pointer;
 		transition: 0.1s all;
 
@@ -92,7 +100,7 @@ a {
 			bottom: 0;
 			position: absolute;
 			z-index: 1;
-			background-color: rgba(255, 255, 255, 0.1);
+			background-color: var(--border-color);
 			inline-size: 100vw;
 			block-size: 1px;
 			inset-block-start: calc(1 * -1);
@@ -103,7 +111,7 @@ a {
 			left: 0;
 			position: absolute;
 			z-index: 1;
-			background-color: rgba(255, 255, 255, 0.1);
+			background-color: var(--border-color);
 			inline-size: 1px;
 			block-size: 100vh;
 		}
