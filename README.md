@@ -1,16 +1,16 @@
 <br>
 
 <div align="center">
-  <h3>🎲 Tic Tac Toe</h3>
+  <h3>Tic Tac Toe ❌⭕</h3>
+A single-player Tic Tac Toe game built with React.
 
-  <a href="https://tic-tac-toe-juste3sar.vercel.app/">View Demo</a>
+  [View Demo](https://6km-xo.vercel.app/)
 </div>
 
 <img align="center" width="100%" src="screenshot.png">
 
-## About The Project
-This is a single-player tic tac toe game built with react.js.
-
-### Built With
+### Built With 🔨
 - [React](https://github.com/facebook/react)
+- [Vite](https://vitejs.dev/)
 - [Framer Motion](https://www.framer.com/motion/)
+- [Zustand](https://github.com/pmndrs/zustand)
