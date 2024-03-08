@@ -23,24 +23,45 @@ button {
 	cursor: pointer;
 }
 
+p {
+	margin: 0;
+}
+
+a {
+	text-decoration: none;
+}
+
 #root {
 	padding-top: 64px;
 	display: flex;
 	flex-direction: column;
 	align-items: center;
 
-	:not(:last-child) {
+	&>:not(:last-child) {
 		margin-bottom: 32px;
 	}
 }
 
-.container {
-	width: 28em;
-	height: 28em;
-	user-select: none;
-	transform: scale(0.8);
-}
+.header {
+	.author {
+		font-size: 1em;
+		font-family: JetBrains Mono;
+		text-align: end;
+		color: #828698;
 
+		a {
+			color: #828698;
+			// transition: .1s ease-in-out;
+
+			&:hover {
+				color: #acb1c9;
+				text-decoration: underline;
+				text-decoration-thickness: 2px;
+				text-decoration-skip-ink: none;
+			}
+		}
+	}
+}
 
 .board {
 	display: grid;
