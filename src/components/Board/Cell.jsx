@@ -9,5 +9,4 @@ function Cell({ value, isWinner, onMove }) {
 	</div>
 }
 
-// eslint-disable-next-line react-refresh/only-export-components
 export default React.memo(Cell, (prevProps, nextProps) => (JSON.stringify(prevProps) === JSON.stringify(nextProps)))
