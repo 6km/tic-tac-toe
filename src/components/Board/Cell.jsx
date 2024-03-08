@@ -2,7 +2,7 @@ import React from "react"
 
 function Cell({ value, isWinner, onMove }) {
 	return <div
-		className={`${value && "has-move"} ${isWinner ? "winner" : ""}`}
+		className={`cell ${value ? "has-move" : ""} ${isWinner ? "winner" : ""}`}
 		onClick={onMove}
 	>
 		<span>{value}</span>

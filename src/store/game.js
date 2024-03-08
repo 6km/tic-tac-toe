@@ -3,21 +3,22 @@ import { create } from "zustand"
 const useGameStore = create((set) => ({
 	turn: "X",
 	moves: Array(9).fill(null),
-	addMove: (cell, player) => {
-		set(({ winner, moves, turn }) => {
-			if (winner || moves[cell]) return {}
-
-			return {
-				moves: [...moves.slice(0, cell), player || turn, ...moves.slice(cell + 1)],
-				turn: turn === "X" ? "O" : "X"
-			}
-		})
-	},
-	toggleTurn: () => set(state => ({ turn: state.turn === "X" ? "O" : "X" })),
-
 	winner: null,
 	winnerMoves: [],
-	setWinner: (winner, winnerMoves) => set(state => ({ ...state, winner, winnerMoves })),
+	gameOver: false,
+
+	addMove: (cell, player) => {
+		set((state) => {
+			if (state.winner || state.moves[cell]) return state
+
+			const moves = [...state.moves]
+			moves[cell] = player || state.turn
+
+			return { moves, turn: state.turn === "X" ? "O" : "X" }
+		})
+	},
+
+	setWinner: (winner, winnerMoves) => set({ winner, winnerMoves }),
 
 	resetProgress: () => set({
 		turn: "X",
@@ -27,8 +28,7 @@ const useGameStore = create((set) => ({
 		gameOver: false,
 	}),
 
-	gameOver: false,
-	setGameOver: (newState) => set({ gameOver: newState })
+	setGameOver: (newState) => set({ gameOver: newState }),
 }))
 
 export default useGameStore
